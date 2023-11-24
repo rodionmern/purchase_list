@@ -1,10 +1,17 @@
+var parent, inputPurchase, NewTask;
+
 function addNewPurchase() {
-	var parent = document.querySelector('.purchases');
 
-	var inputPurchase = document.getElementById('inputPurchase').value;
+	parent = document.querySelector('.purchases');
 
-	var NewTask = document.createElement('p');
+	inputPurchase = document.getElementById('inputPurchase').value;
+
+	NewTask = document.createElement('p');
 	NewTask.textContent = inputPurchase;
 
 	parent.appendChild(NewTask);
+
+	localStorage.setItem('Task', inputPurchase)
+	console.log(localStorage.getItem('Task'))
+
 }
