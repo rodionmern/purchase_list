@@ -3,7 +3,7 @@ var parent, inputPurchase, NewPurchase, ClosePurchase, NewTask;
 listPurchases = document.createElement('div');
 
 taska = 'taska';
-taskNumber = -1;
+taskNumber = 0	;
 
 function addNewPurchase() {
 
@@ -19,8 +19,10 @@ function addNewPurchase() {
 	ClosePurchase = document.createElement('li');
 	ClosePurchase.textContent = "X";
 
+	taska = 'taska' + `${taskNumber}`;
 	localStorage.setItem(taska, inputPurchase);
-	taskNumber = taskNumber + 1;
+
+	taskNumber ++;
 	taska = 'taska' + `${taskNumber}`;
 	console.log(taska);
 
