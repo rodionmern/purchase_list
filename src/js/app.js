@@ -1,12 +1,12 @@
 var parent, inputPurchase, NewPurchase, ClosePurchase, NewTask;
 
+listPurchases = document.createElement('div');
+
 function addNewPurchase() {
 
 	parent = document.querySelector('.purchases');
 
 	NewPurchase = document.createElement('ul');
-
-	parent.appendChild(NewPurchase);
 
 	inputPurchase = document.getElementById('inputPurchase').value;
 
@@ -16,12 +16,24 @@ function addNewPurchase() {
 	ClosePurchase = document.createElement('li');
 	ClosePurchase.textContent = "X";
 
-	NewPurchase.appendChild(NewTask);
-	NewPurchase.appendChild(ClosePurchase);
-
 	localStorage.setItem('Task', inputPurchase);
 	console.log(localStorage.getItem('Task'));
 
 	inputPurchase = document.getElementById('inputPurchase').value = "";
+
+	ClosePurchase.addEventListener( "click" , () => parent.removeChild(Element));
+
+	parent.appendChild(listPurchases);
+	listPurchases.appendChild(NewPurchase);
+	NewPurchase.appendChild(NewTask);
+	NewPurchase.appendChild(ClosePurchase);
+
+}
+
+function clearAllPurchases() {
+	
+	clearPurchases = document.getElementById('minus');
+
+	clearPurchases.addEventListener( "click" , () => parent.removeChild(listPurchases));
 
 }
