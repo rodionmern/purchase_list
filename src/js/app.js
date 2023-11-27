@@ -1,4 +1,4 @@
-var parent, inputPurchase, NewPurchase, ClosePurchase, NewTask;
+var parent, inputPurchase, NewPurchase, ClosePurchase, NewTask, returnNumber;
 
 listPurchases = document.createElement('div');
 
@@ -41,7 +41,9 @@ function returnLastPurchases() {
 
 	parent = document.querySelector('.purchases');
 
-	for (var i = 0; i < 5; i++) { // выведет 0, затем 1, затем 2
+	returnNumber = document.getElementById('returnNumber').value;
+
+	for (var i = 0; i < returnNumber; i++) { // выведет 0, затем 1, затем 2
 		NewPurchase = document.createElement('ul');
 
 		inputPurchase = document.getElementById('inputPurchase').value;
@@ -57,14 +59,6 @@ function returnLastPurchases() {
 		NewPurchase.appendChild(NewTask);
 		NewPurchase.appendChild(ClosePurchase);
 	}
-
-	// document.getElementById('listPurchases').innerHTML = localStorage.getItem('taska');
-	// document.getElementById('listPurchases').innerHTML = localStorage.getItem('taska1');
-	// document.getElementById('listPurchases').innerHTML = localStorage.getItem('taska2');
-	// document.getElementById('listPurchases').innerHTML = localStorage.getItem('taska3');
-	// document.getElementById('listPurchases').innerHTML = localStorage.getItem('taska4');
-	// document.getElementById('listPurchases').innerHTML = localStorage.getItem('taska5');
-	// document.getElementById('listPurchases').innerHTML = localStorage.getItem('taska6');
 
 }
 

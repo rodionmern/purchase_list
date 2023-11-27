@@ -15,9 +15,10 @@
 		<div class="purchases">
 			<div class="purchaseAdd">
 				<input id="inputPurchase" placeholder="Введите продукт:">
-				<div id="plus" onclick="addNewPurchase()">+</div>
-				<div id="minus" onclick="clearAllPurchases()">X</div>
-				<div id="upload" onclick="returnLastPurchases()">~></div>
+				<div id="plus" onclick="addNewPurchase()" title="Добавить продукт">+</div>
+				<div id="minus" onclick="clearAllPurchases()" title="Стереть продукты">X</div>
+				<input type="number" id="returnNumber" placeholder="0" title="К-во продуктов">
+				<div id="upload" onclick="returnLastPurchases()" title="Загрузить">~></div>
 			</div>
 			<div id="listPurchases"></div>
 		</div>
